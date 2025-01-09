@@ -10,7 +10,7 @@
 
 在学习awk的过程中，我注意到了shebang行 `#!/usr/bin/awk -f`的使用，即带有额外参数的shebang。在python文件中有时也会看到，通常为`#!/usr/bin/python -u` 以启用无缓冲输出。
 
-当试着在awk中添加一些额外的参数，理想情况下将其作为`#!/usr/bin/awk -i inplace -f`运行，以直接修改源文件而不是将结果输出到标准输出。但是并没有起作用。shebang行等同于命令：`awk "-i inplace -f" file.awk`，即用一个参数调用`awk`，所有标志都合并到一个字符串中。这肯定不是有效的方法。这让我产生了一个问题：**不同的类 Unix 系统如何处理 shebang 参数？**
+当试着在awk中添加一些额外的参数，理想情况下将其作为`#!/usr/bin/awk -i inplace -f`运行，以直接修改源文件而不是将结果输出到标准输出。但是并没有起作用。shebang行等同于命令：`awk "-i inplace -f" file.awk`，即用一个参数调用`awk`，所有的参数项都合并到一个字符串中。这肯定不是有效的方法。这让我产生了一个问题：**不同的类 Unix 系统如何处理 shebang 参数？**
 
 ## 辅助程序
 
