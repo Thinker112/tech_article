@@ -1,6 +1,6 @@
 # Shebang行
 
-原文：[Shebang 行](https://linuskarlsson.se/blog/shebang-shenanigans/)
+原文：[shebang-shenanigans](https://linuskarlsson.se/blog/shebang-shenanigans/)
 
 你们可能都在shell脚本顶部见过shebang行，第一行都是以`#!/bin/sh`开头。
 
