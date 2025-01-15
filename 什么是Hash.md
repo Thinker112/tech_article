@@ -24,7 +24,7 @@ graph LR
     style A fill:#ADD8E6,stroke:#000,stroke-width:2px  
     style B fill:#D8BFD8,stroke:#000,stroke-width:2px 
     style C fill:#FFCBA4,stroke:#000,stroke-width:2px  
- 	C -. Error .-> A
+ 	C -. No .-> A
  	linkStyle 2 stroke:#FF0000,color:#FF0000,stroke-width:2px,font-size:12px
 
 ```
