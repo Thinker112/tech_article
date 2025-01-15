@@ -57,7 +57,7 @@ index = key \bmod tableSize
 $$
 
 
-这将确Hash值始终在表大小的限制内。以下是此类散列函数的代码：
+这将确保Hash值始终在表大小的限制内。以下是此类散列函数的代码：
 
 ```python
 def hashModular(key, size):
