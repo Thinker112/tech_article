@@ -361,7 +361,7 @@ http {
 
 ## 会话保持
 
-### 使用 Sticky Sessions 第三方模块
+### 1. 使用 Sticky Sessions 第三方模块
 
 如果使用开源版 Nginx，可以通过编译支持 `nginx-sticky-module-ng`。
 
@@ -384,7 +384,7 @@ http {
 }
 ```
 
-### 使用 Nginx 自定义变量
+### 2. 使用 Nginx 自定义变量
 
 可以通过手动创建和管理 Cookie 的方式来实现。
 
@@ -416,8 +416,19 @@ nginx复制编辑http {
 }
 ```
 
-### 注意事项
+### 3. 注意事项
 
 1. 如果使用基于 IP 的方法（`ip_hash`），在启用 HTTPS 时，可能会影响客户端会话保持。
 2. 在配置会话保持时，应考虑后端服务器是否能够支持跨服务器共享会话（如使用 Redis 或数据库同步会话数据）。
+
+## HTTP-Keepalive
+
+```nginx
+http{
+    keepalive_time 60; #限制最大连接时长，超过设定时间后TCP连接将强制关闭。默认时间：1h
+    keepalive_timeout 65;#keepalive空闲时间，超出空闲时间keepalive将失效。
+    send_timeout 30s;#控制服务器向客户端发送响应数据时的超时时间, 默认值：60s
+    keepalive_request 1000;#一个TCP复用中 可以并发接收的请求个数。
+}
+```
 
